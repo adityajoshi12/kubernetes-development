@@ -25,3 +25,30 @@ docker build -t adityajoshi12/kafka-kraft:1.0 .
 ```
 kubectl apply -f kubernetes/kafka.yaml
 ```
+4. Running nodejs kafka app
+```
+cd kafka-nodejs-app
+docker build -t adityajoshi12/kafka-app:1.0 .
+kubeclt apply -f app.yaml
+```
+
+### Exploring Kafka
+Cluster ID
+```
+./kafka-cluster.sh cluster-id --bootstrap-server localhost:9092
+```
+Logs Directory
+```
+./kafka-log-dirs.sh --describe --bootstrap-server localhost:9092
+```
+Topic Creation
+```
+./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic test1 --partitions 3 --replication-factor 2
+```
+```
+./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic test2 --partitions 3 --replication-factor 5
+```
+List all topics
+```
+./kafka-topics.sh --bootstrap-server localhost:9092 --list
+```
