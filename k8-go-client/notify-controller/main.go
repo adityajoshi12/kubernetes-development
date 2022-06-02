@@ -17,7 +17,7 @@ import (
 )
 
 const (
-	MQ_HOST = "amqps://ulrrimlg:OzH3sTunX8kikcKKNnJCAr7vGiyPcPyq@lionfish.rmq.cloudamqp.com/ulrrimlg"
+	MQ_HOST = ""
 )
 
 func main() {
