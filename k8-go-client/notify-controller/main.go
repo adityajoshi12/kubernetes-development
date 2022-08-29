@@ -4,16 +4,14 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/client-go/informers"
+	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/cache"
-	"notify-controller/activemq"
-	"path/filepath"
-
-	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/util/homedir"
+	"notify-controller/activemq"
+	"path/filepath"
 )
 
 const (
@@ -45,40 +43,32 @@ func main() {
 			panic(err.Error())
 		}
 	}
+	stopper := make(chan struct{})
+	defer close(stopper)
+
+	mq := activemq.NewActiveMQ(MQ_HOST)
 
 	factory := informers.NewSharedInformerFactory(clientset, 0)
 
-	// Get the informer for the right resource, in this case a Pod
 	informer := factory.Core().V1().Pods().Informer()
 
-	stopper := make(chan struct{})
-	defer close(stopper)
-	defer runtime.HandleCrash()
-
-	mq := activemq.NewActiveMQ(MQ_HOST)
-	// This is the part where your custom code gets triggered based on the
-	// event that the shared informer catches
 	informer.AddEventHandler(cache.ResourceEventHandlerFuncs{
-		// When a new pod gets created
-		AddFunc: func(obj interface{}) { fmt.Printf("Add not implemented") },
-		// When a pod gets updated
-		UpdateFunc: func(interface{}, interface{}) { fmt.Printf("update not implemented") },
-		// When a pod gets deleted
+		AddFunc: func(obj interface{}) {
+			fmt.Println("add event")
+		},
+		UpdateFunc: func(obj1, obj2 interface{}) {
+			fmt.Println("update event")
+		},
 		DeleteFunc: func(obj interface{}) {
-			fmt.Printf("delete object")
+			fmt.Println("delete event")
 			msg, err := json.Marshal(obj)
 			if err != nil {
-
-				panic(err.Error())
+				return
 			}
-			err = mq.Send("mychannel", msg)
-			if err != nil {
-				panic(err.Error())
-			}
+			mq.Send(msg)
 		},
 	})
+
 	go informer.Run(stopper)
-
 	<-stopper
-
 }

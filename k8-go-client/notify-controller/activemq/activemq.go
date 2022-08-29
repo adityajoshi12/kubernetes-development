@@ -19,7 +19,7 @@ func (mq *ActiveMQ) Connect() (*amqp.Connection, error) {
 }
 
 // Send msg to destination
-func (mq *ActiveMQ) Send(destination string, msg []byte) error {
+func (mq *ActiveMQ) Send(msg []byte) error {
 	conn, err := mq.Connect()
 	if err != nil {
 		return err
