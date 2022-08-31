@@ -13,6 +13,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: gautamkrishnar/blog-post-workflow@master
         with:
+          max_post_count: 10
+          commit_message: "Updated with the latest youtube videos"
           comment_tag_name: "YOUTUBE_KUBERNETES-PLAYLIST"
           custom_tags: "channelId/yt:channelId/,videoId/yt:videoId/"
           date_format: "mmm d, yyyy"
@@ -21,6 +23,8 @@ jobs:
           feed_list: "https://www.youtube.com/feeds/videos.xml?playlist_id=PLuAZTZDgj0cuiFNdL0vpQoFniaA9zGcs8"
       - uses: gautamkrishnar/blog-post-workflow@master
         with:
+         max_post_count: 10
+         commit_message: "Updated with the latest youtube videos"
          comment_tag_name: "YOUTUBE_MONITORING-PLAYLIST"
          custom_tags: "channelId/yt:channelId/,videoId/yt:videoId/"
          date_format: "mmm d, yyyy"
