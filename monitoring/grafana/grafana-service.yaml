@@ -9,6 +9,7 @@ metadata:
   name: grafana
   namespace: monitoring
 spec:
+  type: LoadBalancer
   ports:
   - name: http
     port: 3000
