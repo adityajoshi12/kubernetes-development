@@ -19,6 +19,10 @@ This repository contains guide for kubernetes related things.
 <td><a href="https://www.youtube.com/watch?v=33VEu9Kqvno">Logging in Kubernetes | Fluent Bit | Observability | ADITYA JOSHI |</a><br/>Apr 5, 2022</td></tr></table>
 <table><tr><td><a href="https://www.youtube.com/watch?v=QWIk1UdIh5c"><img width="140px" src="https://i.ytimg.com/vi/QWIk1UdIh5c/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=QWIk1UdIh5c">Kubernetes Cluster Migration | Migrating Data Across Clusters | ADITYA JOSHI |</a><br/>Mar 15, 2022</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=_y0yGAbLknU"><img width="140px" src="https://i.ytimg.com/vi/_y0yGAbLknU/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=_y0yGAbLknU">Kubernetes Backup &amp; Restore using Velero | ADITYA JOSHI |</a><br/>Nov 30, 2021</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=VqeTT0NvRR4"><img width="140px" src="https://i.ytimg.com/vi/VqeTT0NvRR4/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=VqeTT0NvRR4">MongoDB on Kubernetes | MongoDB Community Kubernetes Operator | ADITYA JOSHI</a><br/>Nov 9, 2021</td></tr></table>
 <!-- YOUTUBE_KUBERNETES-PLAYLIST:END -->
 <!-- YOUTUBE_MONITORING-PLAYLIST:START -->
 <!-- YOUTUBE_MONITORING-PLAYLIST:END -->
