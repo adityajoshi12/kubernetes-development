@@ -30,19 +30,16 @@ func main() {
 
 	// use the current context in kubeconfig
 	config, err := clientcmd.BuildConfigFromFlags("", *kubeconfig)
-	if err != nil {
-		panic(err.Error())
-	}
 
-	// create the clientset
-	clientset, err := kubernetes.NewForConfig(config)
 	if err != nil {
-		fmt.Errorf(err.Error())
+		_ = fmt.Errorf("failed to config %s", err.Error())
 		config, err = rest.InClusterConfig()
 		if err != nil {
 			panic(err.Error())
 		}
 	}
+	// create the clientset
+	clientset, err := kubernetes.NewForConfig(config)
 	stopper := make(chan struct{})
 	defer close(stopper)
 
