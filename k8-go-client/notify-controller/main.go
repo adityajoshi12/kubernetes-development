@@ -11,11 +11,8 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/util/homedir"
 	"notify-controller/activemq"
+	"os"
 	"path/filepath"
-)
-
-const (
-	MQ_HOST = ""
 )
 
 func main() {
@@ -42,7 +39,7 @@ func main() {
 	clientset, err := kubernetes.NewForConfig(config)
 	stopper := make(chan struct{})
 	defer close(stopper)
-
+	MQ_HOST := os.Getenv("MQ_HOST")
 	mq := activemq.NewActiveMQ(MQ_HOST)
 
 	factory := informers.NewSharedInformerFactory(clientset, 0)
