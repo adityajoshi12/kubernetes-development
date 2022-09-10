@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notify-controller
+spec:
+  selector:
+    matchLabels:
+      app: notify-controller
+  template:
+    metadata:
+      labels:
+        app: notify-controller
+    spec:
+      serviceAccountName: notify-controller-sa
+      containers:
+      - name: notify-controller
+        image: adityajoshi12/notify-contoller:0.0.1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+
