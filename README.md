@@ -24,7 +24,9 @@ This repository contains guide for kubernetes related things.
 <table><tr><td><a href="https://www.youtube.com/watch?v=VqeTT0NvRR4"><img width="140px" src="https://i.ytimg.com/vi/VqeTT0NvRR4/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=VqeTT0NvRR4">MongoDB on Kubernetes | MongoDB Community Kubernetes Operator | ADITYA JOSHI</a><br/>Nov 9, 2021</td></tr></table>
 <!-- YOUTUBE_KUBERNETES-PLAYLIST:END -->
-<!-- YOUTUBE_MONITORING-PLAYLIST:START --><table><tr><td><a href="https://www.youtube.com/watch?v=EaUWZJJ187E"><img width="140px" src="https://i.ytimg.com/vi/EaUWZJJ187E/mqdefault.jpg"></a></td>
+<!-- YOUTUBE_MONITORING-PLAYLIST:START --><table><tr><td><a href="https://www.youtube.com/watch?v=-kaRDFvOfxQ"><img width="140px" src="https://i.ytimg.com/vi/-kaRDFvOfxQ/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=-kaRDFvOfxQ">Setting up Grafana | Monitoring Kubernetes | ADITYA JOSHI</a><br/>Sep 16, 2022</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=EaUWZJJ187E"><img width="140px" src="https://i.ytimg.com/vi/EaUWZJJ187E/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=EaUWZJJ187E">Setting up Prometheus | Monitoring Kubernetes | ADITYA JOSHI</a><br/>Sep 2, 2022</td></tr></table>
 <!-- YOUTUBE_MONITORING-PLAYLIST:END -->
 
