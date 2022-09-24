@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]
+then
+  echo "invalid argument "
+  exit 1
+fi
+NAMESPACE="default"
+if [ "$2" = "-n" ]
+then
+   if [ $# -eq 3 ]
+   then
+     NAMESPACE=$3
+    fi
+fi
+
+kubectl get secrets "$1" -o go-template='{{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n\n"}}{{end}}' -n "$NAMESPACE"
+

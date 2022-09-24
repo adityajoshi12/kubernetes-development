@@ -1,0 +1,52 @@
+# kubectl-decode
+
+This plugin will decode the [kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/) from the base64 encoded form to plain text.
+
+### Installation
+```
+curl https://raw.githubusercontent.com/adityajoshi12/kubernetes-development/main/kubectl-plugins/bash/kubectl-decode
+
+chmod +x kubectl-decode
+
+export PATH=$PWD/:$PATH  
+# or move the binary to PATH location
+mv kubectl-decode /usr/local/bin
+```
+
+### Usage
+```
+kubectl decode SECRET_NAME -n NAMESPACE
+```
+Example
+```
+kubectl decode default-token-zgpk8 
+
+kubectl decode token -n monitoring 
+```
+Output
+```
+ca.crt: -----BEGIN CERTIFICATE-----
+MIIDJzCCAg+gAwIBAgICBnUwDQYJKoZIhvcNAQELBQAwMzEVMBMGA1UEChMMRGln
+aXRhbE9jZWFuMRowGAYDVQQDExFrOHNhYXMgQ2x1c3RlciBDQTAeFw0yMjA2MjAy
+MjE3NTBaFw00MjA2MjAyMjE3NTBaMDMxFTATBgNVBAoTDERpZ2l0YWxPY2VhbjEa
+MBgGA1UEAxMRazhzYWFzIENsdXN0ZXIgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IB
+DwAwggEKAoIBAQDbs320qKHXTZo9SVy/vgj1xoXVXBrZdsvAmkGUqMp83hDJb7bZ
+q7YWjgNTi+nfIjAdH42wGX2GhL2xF7KxqfB0TQJPA1t6nI/GCiKcuofGH/i26xEg
+2F3QEiIUx7eof1LzgQEg/IYNNtgeLYKeQPDPBKB30mJb3m2bvqLoA6MDcLPcVe7+
+4l6qt5hCqX3gfI/2UAH1QGuY8t5Y/wZbamq8woFPrcLYwPpOc9QSAanUFnwaPF+C
+m/xlek67eQhBavHWY+wjuyvcRdA9JX/KAKh6amko8YOgkE3Cyd+OJLUqAUkEsBa0
+OcDvgwycT1lqjCy0WIODEawKjWh1H0BkSb1fAgMBAAGjRTBDMA4GA1UdDwEB/wQE
+AwIBhjASBgNVHRMBAf8ECDAGAQH/AgEAMB0GA1UdDgQWBBQ+AswBnztAtDf+3/7L
+vC1j/CCu4TANBgkqhkiG9w0BAQsFAAOCAQEAPy9+F6pXoouORGuLJCjO5vlhaD9y
+Ms/kvJdcaj6B1bZYlMBb9JilXLAUXu2dT0vmqFsvix45m4W9cPg6apsSxz2LfiBh
+0kg2Syus4DosTEpiwhKxs3H0yY54lb3LRHmv2xMIqshO1ljdDNVP55A8fKSp7pzK
+HfXj0KUSl33vKIPv+GvtX3KDGvqZM+FIvQ0BrUhQ2hiywALDaX/uF5Ift2r5eycE
+jIxKV09VSOtIObkUm1TOREs10+5kHf/PE+BbNbLdyy6+sULv72dPOK4JB3vytIRB
+6xUclmM7NoRm1NJRKP0ktfoyAG9j18eh2RLbVc+GeyHh0twc0qgkpP9YSQ==
+-----END CERTIFICATE-----
+
+
+namespace: default
+
+token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImRXbllTU2JJenAxMWVyWWJkX21KaGNKMXlYNy1PcVk5bkdoVTUydktCVlkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRlZmF1bHQtdG9rZW4temdwazgiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmYXVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6ImZiODFiNmQ3LTk0NjAtNGRkMi1hNDIyLWM4YmY4N2ZjYmFjYSIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.c1mMDY0rQ1QptN52JEMggSB0ZHoAZHpj4HZRpRKZUvH-DkjNNY54rzQDhnCd-lR--Rds6fWo0jRGgbO37pcfN_FBkmhVFX299sVSpYPq9sycerh0up_kfM0ProZqtVEIyZwxgMADGeR0JmbrarPvqQyK12w3jRz5BWozL
+```
