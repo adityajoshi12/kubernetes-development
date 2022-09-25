@@ -15,7 +15,7 @@ kubectl provides a command kubectl plugin list that searches your `PATH` for val
 You can write a plugin in any programming language or script that allows you to write command-line commands.
 
 I have added example plugin in following languages
-1. [`bash` (shell script)](./bash/README.md)
+1. [`bash` (shell script)](./bash)
 
 ### krew - a plugin manager for kubectl
 
