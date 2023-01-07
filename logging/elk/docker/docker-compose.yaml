@@ -1,0 +1,51 @@
+version: '3.6'
+services:
+  elasticsearch:
+    image: elasticsearch:8.2.2
+    container_name: elasticsearch
+    restart: always
+    volumes:
+    - elastic_data:/usr/share/elasticsearch/data/
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      discovery.type: single-node  
+      ELASTIC_PASSWORD: changeme  
+    ports:
+    - '9200:9200'
+    - '9300:9300'
+    networks:
+      - elk
+
+  Logstash:
+    image: logstash:8.2.2
+    container_name: logstash
+    restart: always
+    volumes:
+    - ${PWD}/:/logstash_dir
+    command: logstash -f /logstash_dir/logstash.conf 
+    depends_on:
+      - elasticsearch
+    ports:
+    - '9600:9600'
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"    
+    networks:
+      - elk
+
+  Kibana:
+    image: kibana:8.2.2
+    container_name: kibana
+    restart: always       
+    ports:
+    - '5601:5601'
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200  
+    depends_on:
+      - elasticsearch  
+    networks:
+      - elk
+volumes:
+  elastic_data: {}
+
+networks:
+  elk:
