@@ -1,0 +1,3 @@
+[submodule "scaler-operator"]
+	path = scaler-operator
+	url = https://github.com/adityajoshi12/scaler-operator.git
