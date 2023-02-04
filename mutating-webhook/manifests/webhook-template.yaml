@@ -1,0 +1,25 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: resource-webhook
+webhooks:
+  - name: resource-webhook.default.svc.cluster.local
+    admissionReviewVersions:
+      - "v1"
+    sideEffects: "None"
+    timeoutSeconds: 30
+    objectSelector:
+      matchLabels:
+        resource-webhook-enabled: "true"
+    clientConfig:
+      service:
+        name: resource-webhook
+        namespace: default
+        path: "/mutate"
+        port: 8080
+      caBundle: "CA-CERT"
+    rules:
+      - operations: [ "CREATE" ]
+        apiGroups: [""]
+        apiVersions: ["v1"]
+        resources: ["pods"]

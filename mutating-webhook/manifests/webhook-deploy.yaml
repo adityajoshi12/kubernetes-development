@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resource-webhook
+  labels:
+    app: resource-webhook
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: resource-webhook
+      labels:
+        app: resource-webhook
+    spec:
+      volumes:
+        - name: certs
+          secret:
+            secretName: tls
+      containers:
+        - name: webhook
+          image: adityajoshi12/mutating-webhook:0.0.3
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /etc/certs
+              name: certs
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: resource-webhook
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: resource-webhook
+spec:
+  selector:
+    app: resource-webhook
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: ClusterIP
