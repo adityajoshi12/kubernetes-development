@@ -9,7 +9,9 @@ This repository contains guide for kubernetes related things.
 [<img src="https://img.shields.io/badge/-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white"/>](https://www.youtube.com/channel/UCL0SMt31uGzKqbKCQ7Zprxg?sub_confirmation=1)
 
 </div>
-<!-- YOUTUBE_KUBERNETES-PLAYLIST:START --><table><tr><td><a href="https://www.youtube.com/watch?v=6BlY8Zr8-Cc"><img width="140px" src="https://i.ytimg.com/vi/6BlY8Zr8-Cc/mqdefault.jpg"></a></td>
+<!-- YOUTUBE_KUBERNETES-PLAYLIST:START --><table><tr><td><a href="https://www.youtube.com/watch?v=FHjLL5e7h00"><img width="140px" src="https://i.ytimg.com/vi/FHjLL5e7h00/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=FHjLL5e7h00">Kubernetes Operator | Creating Kubernetes Operator using operator-sdk | kubebuilder | ADITYA JOSHI |</a><br/>Feb 7, 2023</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=6BlY8Zr8-Cc"><img width="140px" src="https://i.ytimg.com/vi/6BlY8Zr8-Cc/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=6BlY8Zr8-Cc">MINio on Kubernetes| Deploying MINio Object storage on kubernetes| ADITYA JOSHI |</a><br/>Jan 17, 2023</td></tr></table>
 <table><tr><td><a href="https://www.youtube.com/watch?v=2epdFWbiE_c"><img width="140px" src="https://i.ytimg.com/vi/2epdFWbiE_c/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=2epdFWbiE_c">Extending Kubectl with plugin| Creating kubectl plugin using golang | ADITYA JOSHI |</a><br/>Oct 14, 2022</td></tr></table>
@@ -27,8 +29,6 @@ This repository contains guide for kubernetes related things.
 <td><a href="https://www.youtube.com/watch?v=33VEu9Kqvno">Logging in Kubernetes | Fluent Bit | Observability | ADITYA JOSHI |</a><br/>Apr 5, 2022</td></tr></table>
 <table><tr><td><a href="https://www.youtube.com/watch?v=QWIk1UdIh5c"><img width="140px" src="https://i.ytimg.com/vi/QWIk1UdIh5c/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=QWIk1UdIh5c">Kubernetes Cluster Migration | Migrating Data Across Clusters | ADITYA JOSHI |</a><br/>Mar 15, 2022</td></tr></table>
-<table><tr><td><a href="https://www.youtube.com/watch?v=_y0yGAbLknU"><img width="140px" src="https://i.ytimg.com/vi/_y0yGAbLknU/mqdefault.jpg"></a></td>
-<td><a href="https://www.youtube.com/watch?v=_y0yGAbLknU">Kubernetes Backup &amp; Restore using Velero | ADITYA JOSHI |</a><br/>Nov 30, 2021</td></tr></table>
 <!-- YOUTUBE_KUBERNETES-PLAYLIST:END -->
 <!-- YOUTUBE_MONITORING-PLAYLIST:START --><table><tr><td><a href="https://www.youtube.com/watch?v=oqqjRHcgVeQ"><img width="140px" src="https://i.ytimg.com/vi/oqqjRHcgVeQ/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=oqqjRHcgVeQ">Monitoring applications using Prometheus ServiceMonitor and PodMonitor | ADITYA JOSHI |</a><br/>Oct 28, 2022</td></tr></table>
