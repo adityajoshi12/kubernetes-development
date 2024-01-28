@@ -3,24 +3,21 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+
 	corev1 "k8s.io/api/core/v1"
 
 	"github.com/gin-gonic/gin"
 
-	v1 "k8s.io/api/admission/v1"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"log"
 	"net/http"
+
+	v1 "k8s.io/api/admission/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 func main() {
 	r := gin.Default()
-	r.GET("/healtz", func(c *gin.Context) {
-		fmt.Println(c.Request.Method)
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
+	r.GET("/healtz", health)
 	r.POST("/mutate", handleMutate)
 
 	err := r.RunTLS(":8080", "/etc/certs/tls.crt", "/etc/certs/tls.key")
@@ -30,6 +27,11 @@ func main() {
 
 	log.Println("Starting server ...")
 
+}
+func health(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"message": "pong",
+	})
 }
 
 func handleMutate(c *gin.Context) {
