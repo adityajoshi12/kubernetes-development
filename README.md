@@ -9,7 +9,9 @@ This repository contains guide for kubernetes related things.
 [<img src="https://img.shields.io/badge/-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white"/>](https://www.youtube.com/channel/UCL0SMt31uGzKqbKCQ7Zprxg?sub_confirmation=1)
 
 </div>
-<!-- YOUTUBE_KUBERNETES-PLAYLIST:START --><table><tr><td><a href="https://www.youtube.com/watch?v=fnGNxcxfEz8"><img width="140px" src="https://i.ytimg.com/vi/fnGNxcxfEz8/mqdefault.jpg"></a></td>
+<!-- YOUTUBE_KUBERNETES-PLAYLIST:START --><table><tr><td><a href="https://www.youtube.com/watch?v=Wz_A6fm1Dgs"><img width="140px" src="https://i.ytimg.com/vi/Wz_A6fm1Dgs/mqdefault.jpg"></a></td>
+<td><a href="https://www.youtube.com/watch?v=Wz_A6fm1Dgs">Kubernetes Admission Webhook | Building Mutating Webhook | ADITYA JOSHI |</a><br/>Feb 13, 2024</td></tr></table>
+<table><tr><td><a href="https://www.youtube.com/watch?v=fnGNxcxfEz8"><img width="140px" src="https://i.ytimg.com/vi/fnGNxcxfEz8/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=fnGNxcxfEz8">Send K8s logs to S3 using FluentBit | Distributed logging | Observability | ADITYA JOSHI</a><br/>May 26, 2023</td></tr></table>
 <table><tr><td><a href="https://www.youtube.com/watch?v=FHjLL5e7h00"><img width="140px" src="https://i.ytimg.com/vi/FHjLL5e7h00/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=FHjLL5e7h00">Kubernetes Operator | Creating Kubernetes Operator using operator-sdk | kubebuilder | ADITYA JOSHI |</a><br/>Feb 7, 2023</td></tr></table>
@@ -27,8 +29,6 @@ This repository contains guide for kubernetes related things.
 <td><a href="https://www.youtube.com/watch?v=tQvpZSWYt8E">Kubernetes Client-Go | Creating Kubernetes Native Applications | ADITYA JOSHI |</a><br/>May 24, 2022</td></tr></table>
 <table><tr><td><a href="https://www.youtube.com/watch?v=yvThxgOLXxE"><img width="140px" src="https://i.ytimg.com/vi/yvThxgOLXxE/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=yvThxgOLXxE">Apache Kakfa on KRaft Mode | Kafka On Kubernetes | ADITYA JOSHI |</a><br/>May 6, 2022</td></tr></table>
-<table><tr><td><a href="https://www.youtube.com/watch?v=33VEu9Kqvno"><img width="140px" src="https://i.ytimg.com/vi/33VEu9Kqvno/mqdefault.jpg"></a></td>
-<td><a href="https://www.youtube.com/watch?v=33VEu9Kqvno">Logging in Kubernetes | Fluent Bit | Observability | ADITYA JOSHI |</a><br/>Apr 5, 2022</td></tr></table>
 <!-- YOUTUBE_KUBERNETES-PLAYLIST:END -->
 <!-- YOUTUBE_MONITORING-PLAYLIST:START --><table><tr><td><a href="https://www.youtube.com/watch?v=oqqjRHcgVeQ"><img width="140px" src="https://i.ytimg.com/vi/oqqjRHcgVeQ/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=oqqjRHcgVeQ">Monitoring applications using Prometheus ServiceMonitor and PodMonitor | ADITYA JOSHI |</a><br/>Oct 28, 2022</td></tr></table>
