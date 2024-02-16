@@ -10,7 +10,7 @@ This repository contains guide for kubernetes related things.
 
 </div>
 <!-- YOUTUBE_KUBERNETES-PLAYLIST:START --><table><tr><td><a href="https://www.youtube.com/watch?v=Wz_A6fm1Dgs"><img width="140px" src="https://i.ytimg.com/vi/Wz_A6fm1Dgs/mqdefault.jpg"></a></td>
-<td><a href="https://www.youtube.com/watch?v=Wz_A6fm1Dgs">Kubernetes Admission Webhook | Building Mutating Webhook | ADITYA JOSHI |</a><br/>Feb 13, 2024</td></tr></table>
+<td><a href="https://www.youtube.com/watch?v=Wz_A6fm1Dgs">Kubernetes Admission Webhook | Building Mutating Webhook | ADITYA JOSHI |</a><br/>Feb 16, 2024</td></tr></table>
 <table><tr><td><a href="https://www.youtube.com/watch?v=fnGNxcxfEz8"><img width="140px" src="https://i.ytimg.com/vi/fnGNxcxfEz8/mqdefault.jpg"></a></td>
 <td><a href="https://www.youtube.com/watch?v=fnGNxcxfEz8">Send K8s logs to S3 using FluentBit | Distributed logging | Observability | ADITYA JOSHI</a><br/>May 26, 2023</td></tr></table>
 <table><tr><td><a href="https://www.youtube.com/watch?v=FHjLL5e7h00"><img width="140px" src="https://i.ytimg.com/vi/FHjLL5e7h00/mqdefault.jpg"></a></td>
