@@ -1,3 +1,6 @@
 [submodule "scaler-operator"]
 	path = scaler-operator
 	url = https://github.com/adityajoshi12/scaler-operator.git
+[submodule "image-scanner-webhook"]
+	path = image-scanner-webhook
+	url = https://github.com/adityajoshi12/image-scanner-webhook.git
