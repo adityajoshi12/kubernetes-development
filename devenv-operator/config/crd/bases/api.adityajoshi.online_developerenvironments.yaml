@@ -1,0 +1,141 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.14.0
+  name: developerenvironments.api.adityajoshi.online
+spec:
+  group: api.adityajoshi.online
+  names:
+    kind: DeveloperEnvironment
+    listKind: DeveloperEnvironmentList
+    plural: developerenvironments
+    singular: developerenvironment
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: DeveloperEnvironment is the Schema for the developerenvironments
+          API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DeveloperEnvironmentSpec defines the desired state of DeveloperEnvironment
+            properties:
+              database:
+                description: Database configuration
+                properties:
+                  type:
+                    enum:
+                    - postgres
+                    - redis
+                    type: string
+                  version:
+                    default: latest
+                    type: string
+                required:
+                - type
+                - version
+                type: object
+              dependencies:
+                description: Additional dependencies
+                items:
+                  description: DependencySpec defines additional tool dependencies
+                  properties:
+                    name:
+                      type: string
+                    version:
+                      type: string
+                  required:
+                  - name
+                  - version
+                  type: object
+                type: array
+              ide:
+                description: Development tools and IDE
+                properties:
+                  extensions:
+                    items:
+                      type: string
+                    type: array
+                  passwordSecret:
+                    type: string
+                  settings:
+                    additionalProperties:
+                      type: string
+                    type: object
+                  type:
+                    type: string
+                required:
+                - type
+                type: object
+              language:
+                description: Language and framework configuration
+                enum:
+                - nodejs
+                - go
+                - python
+                - java
+                - rust
+                type: string
+              version:
+                type: string
+            required:
+            - language
+            - version
+            type: object
+          status:
+            description: DeveloperEnvironmentStatus defines the observed state of
+              DeveloperEnvironment
+            properties:
+              accessURL:
+                type: string
+              conditions:
+                items:
+                  description: Condition contains details for the current condition
+                    of the DevEnv
+                  properties:
+                    message:
+                      type: string
+                    reason:
+                      type: string
+                    status:
+                      type: string
+                    type:
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              lastUpdated:
+                format: date-time
+                type: string
+              phase:
+                type: string
+            required:
+            - phase
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
