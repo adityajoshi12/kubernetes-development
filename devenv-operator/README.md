@@ -1,8 +1,7 @@
 # devenv-operator
-// TODO(user): Add simple overview of use/purpose
 
 ## Description
-// TODO(user): An in-depth paragraph about your project and overview of use
+The `devenv-operator` is a Kubernetes operator designed to manage developer environments. It automates the creation and management of development environments, including IDEs, databases, and other necessary tools, within a Kubernetes cluster.
 
 ## Getting Started
 You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind) to get a local cluster for testing, or run against a remote cluster.
@@ -11,10 +10,9 @@ You’ll need a Kubernetes cluster to run against. You can use [KIND](https://si
 ### Running on the cluster
 1. Install Instances of Custom Resources:
 
-```sh
-kubectl apply -f config/samples/
-```
-
+    ```sh
+    kubectl apply -f config/crd/bases
+    ```
 2. Build and push your image to the location specified by `IMG`:
 
 ```sh
@@ -42,7 +40,7 @@ make undeploy
 ```
 
 ## Contributing
-// TODO(user): Add detailed information on how you would like others to contribute to this project
+
 
 ### How it works
 This project aims to follow the Kubernetes [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/).
