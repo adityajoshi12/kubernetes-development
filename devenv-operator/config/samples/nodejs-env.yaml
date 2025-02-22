@@ -2,12 +2,12 @@ apiVersion: api.adityajoshi.online/v1
 kind: DeveloperEnvironment
 metadata:
   labels:
-    app.kubernetes.io/name: testcode
-    app.kubernetes.io/instance: testcode-sample
+    app.kubernetes.io/name: nodejs-env
+    app.kubernetes.io/instance: nodejs-env
     app.kubernetes.io/part-of: devenv-operator
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/created-by: devenv-operator
-  name: testcode
+  name: nodejs-env
 spec:
     language: nodejs
     version: "20"

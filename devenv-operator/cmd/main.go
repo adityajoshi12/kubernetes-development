@@ -88,9 +88,18 @@ func main() {
 		os.Exit(1)
 	}
 
+	var resourceURL string
+	if url := os.Getenv("RESOURCE_URL"); url != "" {
+		resourceURL = url
+	} else {
+		resourceURL = "developerenv.adityajoshi.online"
+	}
+	setupLog.Info("Resource URL", "url", resourceURL)
+
 	if err = (&controller.DeveloperEnvironmentReconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
+		Client:      mgr.GetClient(),
+		Scheme:      mgr.GetScheme(),
+		ResourceURL: resourceURL,
 	}).SetupWithManager(mgr); err != nil {
 		setupLog.Error(err, "unable to create controller", "controller", "DeveloperEnvironment")
 		os.Exit(1)

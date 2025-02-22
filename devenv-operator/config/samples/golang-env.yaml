@@ -1,0 +1,22 @@
+apiVersion: api.adityajoshi.online/v1
+kind: DeveloperEnvironment
+metadata:
+  labels:
+    app.kubernetes.io/name: golang-env
+    app.kubernetes.io/instance: golang-env
+    app.kubernetes.io/part-of: devenv-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: devenv-operator
+  name: golang-env
+spec:
+    language: go
+    version: "1.22"
+    ide:
+      passwordSecret: "ide-password"
+      type: vscode
+      extensions:
+        - golang.Go
+    database:
+      type: postgres
+
+

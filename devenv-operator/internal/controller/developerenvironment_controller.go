@@ -45,12 +45,12 @@ import (
 )
 
 const finalizerString = "finalizer.devenv.adityajoshi.online"
-const resourceURL = "developerenv.adityajoshi.online"
 
 // DeveloperEnvironmentReconciler reconciles a DeveloperEnvironment object
 type DeveloperEnvironmentReconciler struct {
 	client.Client
-	Scheme *runtime.Scheme
+	Scheme      *runtime.Scheme
+	ResourceURL string
 }
 
 // +kubebuilder:rbac:groups=api.adityajoshi.online,resources=developerenvironments,verbs=get;list;watch;create;update;patch;delete
@@ -223,6 +223,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm install ${NODEJS_VERSION}
 nvm use ${NODEJS_VERSION}
 npm install -g yarn pnpm
+sudo chown -R 1000:1000 "/config/.npm"
 {{- end }}
 
 {{- if .Languages.Go }}
@@ -627,7 +628,7 @@ func (r *DeveloperEnvironmentReconciler) setupVSCodeServer(
 			IngressClassName: &ingressClass,
 			Rules: []networkingv1.IngressRule{
 				{
-					Host: fmt.Sprintf("%s.%s", devEnv.Name, resourceURL),
+					Host: fmt.Sprintf("%s.%s", devEnv.Name, r.ResourceURL),
 					IngressRuleValue: networkingv1.IngressRuleValue{
 						HTTP: &networkingv1.HTTPIngressRuleValue{
 							Paths: []networkingv1.HTTPIngressPath{
@@ -651,9 +652,9 @@ func (r *DeveloperEnvironmentReconciler) setupVSCodeServer(
 			TLS: []networkingv1.IngressTLS{
 				{
 					Hosts: []string{
-						fmt.Sprintf("%s.%s", devEnv.Name, resourceURL),
+						fmt.Sprintf("%s.%s", devEnv.Name, r.ResourceURL),
 					},
-					SecretName: fmt.Sprintf("%s.%s", devEnv.Name, resourceURL),
+					SecretName: fmt.Sprintf("%s.%s", devEnv.Name, r.ResourceURL),
 				},
 			},
 		},
@@ -1016,7 +1017,7 @@ func (r *DeveloperEnvironmentReconciler) finalizeDeveloperEnvironment(ctx contex
 	// Delete Certificate
 	certificate := &certmanagerv1.Certificate{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      fmt.Sprintf("%s.%s", devEnv.Name, resourceURL),
+			Name:      fmt.Sprintf("%s.%s", devEnv.Name, r.ResourceURL),
 			Namespace: devEnv.Namespace,
 		},
 	}
@@ -1105,7 +1106,7 @@ func (r *DeveloperEnvironmentReconciler) setupCertificates(ctx context.Context, 
 
 	// Check if the Certificate exists
 	existingCertificate := &certmanagerv1.Certificate{}
-	certificateName := fmt.Sprintf("%s.%s", devEnv.Name, resourceURL)
+	certificateName := fmt.Sprintf("%s.%s", devEnv.Name, r.ResourceURL)
 	err = r.Get(ctx, client.ObjectKey{Name: certificateName, Namespace: devEnv.Namespace}, existingCertificate)
 	if err != nil && apierrors.IsNotFound(err) {
 		// Certificate does not exist, create it
