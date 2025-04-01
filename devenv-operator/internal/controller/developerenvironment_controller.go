@@ -49,8 +49,9 @@ const finalizerString = "finalizer.devenv.adityajoshi.online"
 // DeveloperEnvironmentReconciler reconciles a DeveloperEnvironment object
 type DeveloperEnvironmentReconciler struct {
 	client.Client
-	Scheme      *runtime.Scheme
-	ResourceURL string
+	Scheme       *runtime.Scheme
+	ResourceURL  string
+	IngressClass string
 }
 
 // +kubebuilder:rbac:groups=api.adityajoshi.online,resources=developerenvironments,verbs=get;list;watch;create;update;patch;delete
@@ -249,6 +250,7 @@ sudo apt-get install -y {{ . }}
 # Clean up
 sudo apt-get clean
 sudo rm -rf /var/lib/apt/lists/*
+chmod 777 /config/workspace/lost+found
 
 echo "Development tools installation complete!"
 `)
@@ -608,7 +610,7 @@ func (r *DeveloperEnvironmentReconciler) setupVSCodeServer(
 			return fmt.Errorf("failed to create VS Code server secret: %w", err)
 		}
 	}
-	ingressClass := "nginx"
+	ingressClass := r.IngressClass
 	ingressName := fmt.Sprintf("%s-vscode-ingress", devEnv.Name)
 	ingress := &networkingv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{

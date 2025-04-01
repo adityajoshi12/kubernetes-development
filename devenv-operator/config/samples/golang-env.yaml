@@ -10,7 +10,7 @@ metadata:
   name: golang-env
 spec:
     language: go
-    version: "1.22"
+    version: "1.22.0"
     ide:
       passwordSecret: "ide-password"
       type: vscode

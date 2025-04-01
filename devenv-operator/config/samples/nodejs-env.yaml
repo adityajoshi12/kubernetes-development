@@ -18,5 +18,5 @@ spec:
         - ms-python.python
         - golang.Go
     database:
-      type: redis
+      type: mysql
 
