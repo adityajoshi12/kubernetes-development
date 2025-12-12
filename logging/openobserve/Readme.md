@@ -140,7 +140,7 @@ data:
         Name http
         Match *
         URI /api/default/default/_json
-        Host openobserve-lb.openobserve
+        Host openobserve.openobserve
         Port 5080
         tls Off
         Format json
